@@ -1,0 +1,14 @@
+services:
+  - docker
+
+install:
+  - echo "nothing needs to be installed"
+
+script:
+  - docker --version # print the version for logging
+  - docker build -t todo-app-client .
+  - docker tag todo-app-client $DOCKER_USERNAME/todo-app-client:latest
+
+after_success: 
+  - echo "$DOCKER_PASSWORD" | docker login -u "$DOCKER_USERNAME" --password-stdin
+  - docker push $DOCKER_USERNAME/todo-app-client:latest
