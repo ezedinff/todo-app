@@ -7,5 +7,5 @@ export const authConfig = {
   // domain: 'dev-nd9990-p4.us.auth0.com',
   domain: 'dev-hr-y714n.auth0.com',            // Auth0 domain
   clientId: 'zNWM8f0G21lpJfVBqZmPhqiANZOoCide',          // Auth0 client id
-  callbackUrl: 'http://localhost:3000/callback'
+  callbackUrl: 'http://a8baa58f5a4764166943655a9dab4eae-1199825330.us-east-2.elb.amazonaws.com:8080/callback'
 }

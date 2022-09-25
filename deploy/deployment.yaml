@@ -1,0 +1,29 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: todo-app-client
+  labels:
+    app: todo-app-client
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: todo-app-client
+  template:
+    metadata:
+      labels:
+        app: todo-app-client
+    spec:
+      containers:
+        - name: todo-app-client
+          image: ezedinff/todo-app-client:latest
+          imagePullPolicy: Always
+          ports:
+            - containerPort: 8080
+          resources:
+            requests:
+              memory: "64Mi"
+              cpu: "250m"
+            limits:
+              memory: "1024Mi"
+              cpu: "500m"  
